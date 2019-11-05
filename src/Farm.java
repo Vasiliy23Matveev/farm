@@ -32,9 +32,11 @@ public class Farm {
     @Override
     public String toString() {
         return "Farm{" +
-                "wildAnimals=" + Arrays.toString(wildAnimals) +
+                "pets=" + Arrays.toString(pets) +
+                ", wildAnimals=" + Arrays.toString(wildAnimals) +
                 '}';
     }
+
 
     public void feed() {
         for (int i = 0; i < this.pets.length; i++) {
@@ -63,7 +65,7 @@ public class Farm {
          }
      } */
     public void defence() {
-        int choise = 1 + (int) (Math.random() * 1);
+        int choise = 1 + (int) (Math.random() * 2);
         System.out.println(choise);
         int rndWild = (int) (Math.random() * wildAnimals.length);
         System.out.println(rndWild);
@@ -73,9 +75,37 @@ public class Farm {
         if (choise == 1) {
             System.out.println(wildAnimals[rndWild].getType() + " Пробрался на ферму!");
             wildAnimals[rndWild].attack(pets[rnd]);
+            if (pets[rnd].getHp() <= 0) {
+                pets[rnd] = null;
+            }
         }
         else farmer.defence(wildAnimals[rndWild]);
     }
+
+    public void clean() {
+
+        for (int i = 0; i < this.pets.length; i++) {
+            Pet[] pets1 = new Pet[this.pets.length - 1];
+            if (this.pets[i] != null) {
+                for (int j = 0; j < pets1.length; j++) {
+                    if (pets1[j] == null) {
+                        pets1[j] = this.pets[i];
+                    }
+                    return;
+                }
+            } this.pets = pets1;
+        }
+
+    }
 }
+
+
+
+
+
+
+
+
+
 
 

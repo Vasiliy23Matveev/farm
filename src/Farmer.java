@@ -32,7 +32,12 @@ public class Farmer  {
 
     void defence(WildAnimal wildAnimal) {
         wildAnimal.setHp(wildAnimal.getHp() - this.power);
-        System.out.println("Фермер прогнал " + wildAnimal.getType());
+        System.out.println("Фермер прогнал " + wildAnimal.getType() + ", здоровье: " + wildAnimal.getHp());
     }
+
+    public int getResf() {
+        return resf;
+    }
+
 }
 

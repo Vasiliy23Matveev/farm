@@ -35,6 +35,7 @@ public class WildAnimal extends Animal {
             pet.setHp(pet.getHp() - this.power);
         System.out.println(this.getName() + " сделал кусь " + pet.getName() + ", Здоровье " + pet.getName() + " стало " + pet.getHp());
         }
+
     }
 
 

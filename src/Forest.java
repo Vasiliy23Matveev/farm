@@ -12,13 +12,6 @@ public class Forest {
         }
     }
 
-    @Override
-    public String toString() {
-        return "Forest{" +
-                "wildAnimals=" + Arrays.toString(wildAnimals) +
-                '}';
-    }
-
     public void attack(WildAnimal wildAnimal, Pet pet) {
         int choise = 1 + (int) (Math.random() * 2);
         System.out.println(choise);
